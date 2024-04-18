@@ -1,8 +1,9 @@
-#include <iostream>
 
-int adder(int a, int b)
+#include "../def.hpp"
+
+uint32_t adder(uint32_t a, uint32_t b) noexcept
 {
-	int c;
+	uint32_t c;
 	while (b != 0)
 	{
 		c = a & b;
