@@ -12,7 +12,7 @@ all: $(NAME)
 
 $(NAME):
 	$(CC) $(FLAGS) $(SRCS) -o $(NAME) 
-	@valgrind ./a.out
+	@./a.out
 	@rm a.out
 clean :
 	rm -rf $(NAME)

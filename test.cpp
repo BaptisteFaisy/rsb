@@ -26,5 +26,5 @@ int main(void)
 	print_truth_table("ABCDEF||T=X|");
 	str = ("111000||0=1|");
 	cout << "test doit etre = 1 et c'est = " << eval_formula(str)  <<  '\n';
-	
+
 }
