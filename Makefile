@@ -12,6 +12,7 @@ all: $(NAME)
 
 $(NAME):
 	$(CC) $(FLAGS) $(SRCS) -o $(NAME) 
+	# @valgrind --leak-check=full --show-leak-kinds=all ./a.out
 	@./a.out
 	@rm a.out
 clean :

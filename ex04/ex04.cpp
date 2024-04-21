@@ -4,10 +4,11 @@
 std::vector<std::vector<bool>> generateInputs(int numVariables);
 void printInputs(const std::vector<std::vector<bool>>& inputs);
 
-void  print_truth_table(const std::string &str)
+int print_truth_table(const std::string &str)
 {
 	size_t i = 0;
 	string str2;
+	int utils;
 	size_t nbr = 2;
 	size_t j = 0;
 	string strresult;
@@ -69,8 +70,12 @@ void  print_truth_table(const std::string &str)
 			
 		}
 		// cout << strresult << "f";
-		cout << " | " << eval_formula(strresult) << " |" << endl;
+		utils = eval_formula(strresult);
+		if (utils == -1)
+			return -1;
+		cout << " | " << utils << " |" << endl;
     }
+	return (0);
 }
 
 std::vector<std::vector<bool>> generateInputs(int numVariables) {

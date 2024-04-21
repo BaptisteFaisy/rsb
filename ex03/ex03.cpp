@@ -1,6 +1,6 @@
 #include "../def.hpp"
 
-bool eval_formula(const std::string& expression) {
+int eval_formula(const std::string& expression) {
     std::stack<bool> operandStack;
 	bool operand2;
 	bool operand1;
@@ -47,8 +47,8 @@ bool eval_formula(const std::string& expression) {
             }
 			else {
             std::cerr << "Opérateur non reconnu : " << op << std::endl;
-            return false;}
+           	return -1 ;}
         }
     }
-    return operandStack.top();
+    return (int)operandStack.top();
 }

@@ -20,11 +20,10 @@ int main(void)
 	cout << eval_formula(str) << '\n';
 	str = ("11^");
 	cout << eval_formula(str) << '\n';
-	str = ("1!");
+	str = ("1!f");
 	cout << eval_formula(str) << '\n';
 	print_truth_table("AB&C|");
 	print_truth_table("ABCDEF||T=X|");
 	str = ("111000||0=1|");
 	cout << "test doit etre = 1 et c'est = " << eval_formula(str)  <<  '\n';
-
 }
