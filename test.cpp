@@ -27,8 +27,26 @@ int main(void)
 	// print_truth_table("ABCDEF||T=X|");
 	// str = ("111000||0=1|");
 	// cout << "test doit etre = 1 et c'est = " << eval_formula(str)  <<  '\n';
-	str = ("AB&!");
-	cout << negation_normal_form(str) << '\n';
+	// ex 05
+	// str = ("A!!");
+	// cout << negation_normal_form(str) << '\n'; // pas bon
+	// str = ("AB&!");
+	// cout << negation_normal_form(str) << '\n';// 4
+	// str ="AB|!";
+	// cout << negation_normal_form(str) << '\n';// 4
+	// str ="AB>";
+	// cout << negation_normal_form(str) << '\n'; // 2
+	// str ="AB=";
+	// cout << negation_normal_form(str) << '\n'; // 3
+	str = "ABC|&";
+	cout << negation_normal_form(str) << "espected : AB|AC|&" << '\n'; // 5
+	str = "ABC&|";
+	cout << negation_normal_form(str) << "espected : AB&AC&|" << '\n'; // 5
+	// str = "AB|C&!";
+	// cout << negation_normal_form(str) << '\n'; // 4 avec 3 lettr
+	// cout << "A!B!&C!|'\n";
+	// str = "TEST";
+	// cout << negation_normal_form(str) << '\n'; // 4 avec 3 lettre
 	// str = ("AB&!");
 	// cout << negation_normal_form(str) << '\n';
 }
