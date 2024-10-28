@@ -44,6 +44,12 @@ int main(void)
 	// cout <<  conjunctive_normal_form(str).compare("A!B!&") << endl; // OK
 	// str = "AB|C&";
 	// cout << conjunctive_normal_form(str).compare("AB|C&") << endl; // OK
-	str = "AB|C|D|";
-	cout << conjunctive_normal_form(str).compare("ABCD|||") << endl; // KO pas bonnnnnnnnnnn
+	// str = "AB|C|D|";
+	// cout << conjunctive_normal_form(str).compare("ABCD|||") << endl; // OK PATCH
+	// str = "AB&C&D&";
+	// cout << conjunctive_normal_form(str).compare("ABCD&&&") << endl; // OK
+	// str = "AB&!C!|";
+	// cout << conjunctive_normal_form(str).compare("A!B!C!||") << endl; // OK
+	str = "AB|!C!&";
+	cout << conjunctive_normal_form(str).compare("A!B!C!&&") << endl; // OK
 }

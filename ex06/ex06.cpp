@@ -17,7 +17,7 @@ static string move_and_back(const string& s) noexcept
 		const auto ps = get_params(r, r.length() - 1);
 		const auto& le = *(ps.left);
 		const auto& ri = *(ps.right);
-
+		// cout << ps.value.back() << le.value.back() << endl;
 
 		// ab&c& => abc&&
 		if (ps.value.back() == '&' && le.value.back() == '&') {
@@ -27,6 +27,14 @@ static string move_and_back(const string& s) noexcept
 			// removing &c& to insert 'c&&'
 			r = r.substr(0, r.length() - c.length() - 2);
 			r += c + std::string("&&");
+		}
+		// same with |
+		if (ps.value.back() == '|' && le.value.back() == '|') {
+			const auto a = le.left->value;
+			const auto b = le.right->value;
+			const auto c = ri.value;
+			r = r.substr(0, r.length() - c.length() - 2);
+			r += c + std::string("||");
 		}
 		// abc&| => ab|ac|b&
 		else if (ps.value.back() == '|' && ri.value.back() == '&') {
@@ -54,10 +62,21 @@ static string move_and_back(const string& s) noexcept
 static auto is_valid(const string& r) noexcept
 {
 	bool and_zone = true;
+	bool or_zone = true;
 	for (auto i = r.rbegin(); i != r.rend(); i++) {
-		if (*i == '&' && !and_zone) return false;
-		if (*i == '&' && and_zone) continue;
-		if (*i != '&') and_zone = false;
+		if (*i == '&') {
+			if (!and_zone) return false;
+		}
+		if (*i == '|') {
+			if (!or_zone) return false;
+		}
+		if (*i == '&' && and_zone)
+			continue;
+		and_zone = false;
+		if (*i == '|' && or_zone)
+			continue;
+		or_zone = false;
+
 	}
 	return true;
 }
