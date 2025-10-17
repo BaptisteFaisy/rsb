@@ -9,6 +9,14 @@ using namespace std;
 #include <string>
 #include <iostream>
 #include <memory>
+#include <unordered_map>
+#include <algorithm>
+#include <iostream>
+#include <string>
+#include <vector>
+#include <stack>
+#include <set>
+#include <cmath>
 
 struct Params {
 	std::unique_ptr<Params> left = nullptr;
@@ -31,3 +39,4 @@ int print_truth_table(const std::string &str);
 string negation_normal_form(const std::string& formula) noexcept;
 string conjunctive_normal_form(const string& formula);
 
+bool sat(const string& formula);

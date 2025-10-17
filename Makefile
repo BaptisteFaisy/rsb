@@ -9,7 +9,8 @@ SRCS = ex00/ex00.cpp \
 		ex04/ex04.cpp \
 		ex05/ex05.cpp \
 		utils.cpp \
-		ex06/ex06.cpp 
+		ex06/ex06.cpp \
+		ex07/ex07.cpp
 
 all: $(NAME)
 
